@@ -21,7 +21,26 @@ plt.tight_layout()
 plt.savefig("Example_plots")
 plt.close()
 
-# Final 
+# Plots against power
+axs[0, 0].plot(np.arange(1, 41, 2), Te_0_means)
+axs[0, 0].set_xlabel('Power (MW)')
+axs[0, 0].set_ylabel('Electron Temp')
+
+axs[0, 1].plot(np.arange(1, 41, 2), tite_means)
+axs[0, 1].set_xlabel('Power (MW)')
+axs[0, 1].set_ylabel('tite')
+
+axs[1, 0].plot(np.arange(1, 41, 2), taue_means)
+axs[1, 0].set_xlabel('Power (MW)')
+axs[1, 0].set_ylabel('Confinement')
+
+axs[1, 1].plot(np.arange(1, 41, 2), ni_0_means)
+axs[1, 1].set_xlabel('Power (MW)')
+axs[1, 1].set_ylabel('Ion Density')
+plt.tight_layout()
+plt.savefig("Plots vs Power")
+plt.close()
+
 
 plt.plot(TP_ex)
 plt.ylabel("Triple Product")

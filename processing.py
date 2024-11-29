@@ -27,7 +27,7 @@ def get_average(start, end, index, subsection='zerod'):
 
 # Data for example plots
 dataset1 = scipy.io.loadmat(f".\P01_B02_Idef_Ndef")
-print(list_indexes(dataset1))
+# print(list_indexes(dataset1))
 
 Te_0_ex = np.array(get_variable('te0', dataset1))
 tite_ex = np.array(get_variable('tite', dataset1))
@@ -39,6 +39,11 @@ TP_ex = T_i0_ex * taue_ex * ni_0_ex
 
 TP_means = []
 TP_vars = []
+Te_0_means = []
+tite_means = []
+taue_means = []
+ni_0_means = []
+
 indexes = ["01", "03", "05", "07", "09","11", "13", "15", "17", "19", "21", "23", "25", "27", "29", "31", "33", "35", "37", "39"]
 for i in indexes:
     full_dataset = scipy.io.loadmat(f".\P{i}_B02_Idef_Ndef")
@@ -52,3 +57,7 @@ for i in indexes:
     TP = T_i0 * taue * ni_0
     TP_means.append(np.mean(TP[50:100]))
     TP_vars.append(np.std(TP[50:100]))
+    Te_0_means.append(np.mean(Te_0[50:100]))
+    tite_means.append(np.mean(tite[50:100]))
+    taue_means.append(np.mean(taue[50:100]))
+    ni_0_means.append(np.mean(ni_0[50:100]))
